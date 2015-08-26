@@ -3,15 +3,15 @@
 * [Level Up](../README.md)
 * [Overview](./README.md)
 
-Version: 0.4 2015.07.15 AET
+Version: 0.4 2015.08.25 AET
 
 ## List Projects
 
-**Resource URL**: *GET /eee-repos/{version}/projects*
+**Resource URL**: *GET {path-to-service}/{version}/projects*
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.|
 
 Returns list of {project_url, {project_meta_data}}. JSON Schema not shown (trivial)
@@ -19,13 +19,13 @@ Returns list of {project_url, {project_meta_data}}. JSON Schema not shown (trivi
 **Example:**
 
 ```
-GET https://example.com/eee-repos/0.4/projects
+GET https://example.com/eee/bim-api/0.4/projects
 
 Request: none
 
 Response:
 [{
-    "project_url ": "http://example.com/eee-repos/0.4/projects/ABCD",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "ABCD",
@@ -34,7 +34,7 @@ Response:
     }
 },
 {
-    "project_url ": "http://example.com/eee-repos/0.4/projects/ABCD",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "DEFG",
@@ -46,11 +46,11 @@ Response:
 
 
 ## Retrieve Project
-**Resource URL**: *GET /eee-repos/{version}/projects/**project_id***
+**Resource URL**: *GET {path-to-service}/{version}/projects/**project_id***
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	| identifies the project to retrieve
 
@@ -61,11 +61,11 @@ If project not found, return is empty list *[ ]*.
 **Example:**
 
 ```
-GET https://example.com/eee-repos/0.4/projects/ABCD
+GET https://example.com/eee/bim-api/0.4/projects/ABCD
 
 Response:
 [{
-    "project_url ": "http://example.com/eee-repos/0.4/projects/ABCD",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "ABCD",
@@ -76,11 +76,11 @@ Response:
 ```
 
 ## Create Project
-**Resource URL**: *POST /eee-repos/{version}/projects*
+**Resource URL**: *POST {path-to-service}/{version}/projects*
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 JSON body	|[project_meta_data](./schemata/project_meta_data.md) for the project to create. 
 
@@ -89,7 +89,7 @@ Response: List containing single element {project_url, {project_meta_data}}. JSO
 **Example:**
 
 ```
-POST https://example.com/eee-repos/0.4/projects
+POST https://example.com/eee/bim-api/0.4/projects
 Request:
 {
 	"project_name": "oslo-office",
@@ -98,7 +98,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/eee-repos/0.4/projects/DABB",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -109,11 +109,11 @@ Response:
 ```
 
 ## Update Project
-**Resource URL**: *PUT /eee-repos/{version}/projects/**project_id***
+**Resource URL**: *PUT {path-to-service}/{version}/projects/**project_id***
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Identifies which project to update 
 JSON body	|[project_meta_data](./schemata/project_meta_data.md) for the project to update
@@ -125,7 +125,7 @@ Response: List containing single element {project_url, {project_meta_data}} for 
 **Example:**
 
 ```
-PUT https://example.com/eee-repos/0.4/projects/DABB
+PUT https://example.com/eee/bim-api/0.4/projects/DABB
 Request:
 {
 	"project_name": "stuttgart-office",
@@ -134,7 +134,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/eee-repos/0.4/projects/DABB",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -145,11 +145,11 @@ Response:
 ```
 
 ## Delete Project
-**Resource URL**: *DELETE /eee-repos/{version}/projects/**project_id***
+**Resource URL**: *DELETE {path-to-service}/{version}/projects/**project_id***
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Identifies which project to delete 
 
@@ -162,12 +162,12 @@ Response: List containing single element {project_url, {project_meta_data}} for 
 **Example:**
 
 ```
-DELETE https://example.com/eee-repos/0.4/projects/DABB
+DELETE https://example.com/eee/bim-api/0.4/projects/DABB
 Request: none
 
 Response:
 [{
-    "project_url ": "http://example.com/eee-repos/0.4/projects/DABB",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",

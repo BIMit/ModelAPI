@@ -33,6 +33,7 @@ call %MD2_CMD% repository-services-01\domain_service
 call %MD2_CMD% repository-services-01\model_service
 call %MD2_CMD% repository-services-01\model_service_create
 call %MD2_CMD% repository-services-01\model_service_delete
+call %MD2_CMD% repository-services-01\model_service_download
 call %MD2_CMD% repository-services-01\model_service_list
 call %MD2_CMD% repository-services-01\model_service_update
 call %MD2_CMD% repository-services-01\model_service_upload

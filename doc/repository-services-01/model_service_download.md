@@ -2,17 +2,17 @@
 
 * [Model Services Overview](./model_service.md)
 
-Version: 0.4 2015.07.15 AET
+Version: 0.4 2015.08.25 AET
 
 **Resource URLs** 
 
-(1): *GET /eee-repos/{version}/projects/**project_id**/domains/**domain_id**/models/**model_id***
+(1): *GET {path-to-service}/{version}/projects/**project_id**/domains/**domain_id**/models/**model_id***
 
-(2): *GET /eee-repos/{version}/models/**model_id***
+(2): *GET {path-to-service}/{version}/models/**model_id***
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Identifies which project to look for model in 
 *domain_id*	|Identifies which assiged domain to check for model 
@@ -33,7 +33,7 @@ JSON Schema not available (trivial)
 This example uses default repository by not supplying one
 
 ```
-GET https://example.com/eee-repos/0.4/models/ABCD2233
+GET https://example.com/eee/bim-api/0.4/models/ABCD2233
 
 Response: Model data as “file”
 ```

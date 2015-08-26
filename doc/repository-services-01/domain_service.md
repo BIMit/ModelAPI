@@ -3,7 +3,7 @@
 * [Level Up](../README.md)
 * [Overview](./README.md)
 
-Version: 0.4 2015.07.15 AET
+Version: 0.4 2015.08.25 AET
 
 **Important :**
 
@@ -13,12 +13,12 @@ Version: 0.4 2015.07.15 AET
 
 ## List Domains
 
-**Resource URL (1) **: *GET /eee-repos/{version}/projects/project-id/domains*
+**Resource URL (1) **: *GET {path-to-service}/{version}/projects/project-id/domains*
 
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.|
 *project_id*	|Project to list domains for. If skipped, all domains in server will be listed.
 
@@ -27,12 +27,12 @@ Returns list of {domain_url, {domain_meta_data}}. JSON Schema not shown (trivial
 **Example (project level):**
 
 ```
-GET https://example.com/eee-repos/0.4/projects/ABCD/domains
+GET https://example.com/eee/bim-api/0.4/projects/ABCD/domains
 
 
 Response:
 [{
-    "domain_url ": "http://example.com/eee-repos/0.4/projects/ABCD/domains/EFFE",
+    "domain_url ": "http://example.com/eee/bim-api/0.4/projects/ABCD/domains/EFFE",
     "domain_meta_data ":
     {
 	"project_id": "ABCD",
@@ -43,7 +43,7 @@ Response:
     }
 },
 {
-    "domain_url ": "http://example.com/eee-repos/0.4/projects/ABCD/domains/EFFE",
+    "domain_url ": "http://example.com/eee/bim-api/0.4/projects/ABCD/domains/EFFE",
     "domain_meta_data ":
     {
 	"project_id": "ABCD",
@@ -57,11 +57,11 @@ Response:
 
 
 ## Retrieve Domain
-**Resource URL**: *GET /eee-repos/{version}/projects/project-id/domains/EFFE*
+**Resource URL**: *GET {path-to-service}/{version}/projects/project-id/domains/EFFE*
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Project to look for domain in. If skipped, entire server is searched for matching domain
 
@@ -70,7 +70,7 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-GET https://example.com/eee-repos/0.4/projects/ABCD/domains/fbfb
+GET https://example.com/eee/bim-api/0.4/projects/ABCD/domains/fbfb
 
 Response:
 []
@@ -80,11 +80,11 @@ Here server indicates that domain with id ***fbfb*** (HVAC above) is not used in
 
 
 ## Create Domain
-**Resource URL**: *POST /eee-repos/{version}/projects/project_id/domains*
+**Resource URL**: *POST {path-to-service}/{version}/projects/project_id/domains*
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Project to create domain in. 
 JSON body	|[domain_meta_data](./schemata/domain_meta_data.md) for the domain to create. 
@@ -94,7 +94,7 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-POST https://example.com/eee-repos/0.4/projects/DABB/domains
+POST https://example.com/eee/bim-api/0.4/projects/DABB/domains
 Request:
 {
 	"domain_name": "BCS",
@@ -103,7 +103,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/eee-repos/0.4/projects/DABB",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -116,11 +116,11 @@ Response:
 ```
 
 ## Update Domain
-**Resource URL**: *PUT /eee-repos/{version}/projects/**project_id**/domains/**domain_id***
+**Resource URL**: *PUT {path-to-service}/{version}/projects/**project_id**/domains/**domain_id***
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Project to search domain in. 
 *domain_id*	|Id for the domain to update 
@@ -134,7 +134,7 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-POST https://example.com/eee-repos/0.4/projects/DABB/domains
+POST https://example.com/eee/bim-api/0.4/projects/DABB/domains
 Request:
 {
 	"domain_name": "BACS",
@@ -143,7 +143,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/eee-repos/0.4/projects/DABB",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -156,11 +156,11 @@ Response:
 ```
 
 ## Delete Domain
-**Resource URL**: *DELETE /eee-repos/{version}/projects/**project_id**/domains/**domain_id***
+**Resource URL**: *DELETE {path-to-service}/{version}/projects/**project_id**/domains/**domain_id***
 
 element | explanation
 --------|-----------|
-*eee-repos*	|Shorthand for eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Project to search domain in. 
 *domain_id*	|Id for the domain to delete 
@@ -174,11 +174,11 @@ Response: list containing single element {domain_url, {domain_meta_data}}. JSON 
 **Example:**
 
 ```
-DELETE https://example.com/eee-repos/0.4/projects/DABB/domains/fcfc
+DELETE https://example.com/eee/bim-api/0.4/projects/DABB/domains/fcfc
 
 Response:
 [{
-    "project_url ": "http://example.com/eee-repos/0.4/projects/DABB",
+    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",

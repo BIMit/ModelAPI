@@ -3,7 +3,7 @@
 * [Level Up](../README.md)
 * [Overview](./README.md)
 
-Version: 0.4 2015.07.15 AET
+Version: 0.4 2015.08.25 AET
 
 ## Domain Meta Data
 

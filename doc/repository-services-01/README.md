@@ -2,7 +2,7 @@
 
 [Level Up](../README.md)
 
-Version: 0.4 2015.07.15 AET
+Version: 0.4 2015.08.25 AET
 
 ### Classes 
 
@@ -77,14 +77,14 @@ Note that the last two URLS identify the same model, since any model has its own
 In many cases you can find the same elements in the URL as in returned JSON objects. Example: listing domains for project abcd:
 
 ```
-A1: GET https://example.com/eee-repos/0.4/projects/abcd/domains
-A2: GET https://example.com/eee-repos/0.4/domains  {"project_id":"abcd"}
+A1: GET https://example.com/eee/bim-api/0.4/projects/abcd/domains
+A2: GET https://example.com/eee/bim-api/0.4/domains  {"project_id":"abcd"}
 ```
 
 These two alternatives means the same. Now, what happens if you use both, especially with a conflict:
 
 ```
-A3: GET https://example.com/eee-repos/0.4/projects/abcd/domains {"project_id":"1234"}
+A3: GET https://example.com/eee/bim-api/0.4/projects/abcd/domains {"project_id":"1234"}
 ```
 In this case, arguments given as part of URL will take precedence.
 
