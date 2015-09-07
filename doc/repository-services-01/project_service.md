@@ -1,4 +1,4 @@
-# eeE BIM-API Project Services #
+# Seventh Framework Programme BIM-API Project Services #
 
 * [Level Up](../README.md)
 * [Overview](./README.md)
@@ -11,7 +11,7 @@ Version: 0.4 2015.08.25 AET
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.|
 
 Returns list of {project_url, {project_meta_data}}. JSON Schema not shown (trivial)
@@ -19,27 +19,27 @@ Returns list of {project_url, {project_meta_data}}. JSON Schema not shown (trivi
 **Example:**
 
 ```
-GET https://example.com/eee/bim-api/0.4/projects
+GET https://example.com/7fp/bim-api/0.4/projects
 
 Request: none
 
 Response:
 [{
-    "project_url ": "http://example.com/eee/bim-api/0.4/projects/ABCD",
+    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "ABCD",
 	"project_name": "munchen-parkhaus",
-    	"description": "eeEmbedded BIM-API project example",
+    	"description": "7FP BIM-API project example",
     }
 },
 {
-    "project_url ": "http://example.com/eee/bim-api/0.4/projects/ABCD",
+    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "DEFG",
 	"project_name": "stuttgart-Z3",
-    	"description": "eeEmbedded BIM-API project example",
+    	"description": "7FP BIM-API project example",
     }
 }]
 ```
@@ -50,7 +50,7 @@ Response:
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	| identifies the project to retrieve
 
@@ -61,16 +61,16 @@ If project not found, return is empty list *[ ]*.
 **Example:**
 
 ```
-GET https://example.com/eee/bim-api/0.4/projects/ABCD
+GET https://example.com/7fp/bim-api/0.4/projects/ABCD
 
 Response:
 [{
-    "project_url ": "http://example.com/eee/bim-api/0.4/projects/ABCD",
+    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "ABCD",
 	"project_name": "munchen-parkhaus",
-	"description": "eeEmbedded BIM-API project example",
+	"description": "7FP BIM-API project example",
     }
 }]
 ```
@@ -80,7 +80,7 @@ Response:
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 JSON body	|[project_meta_data](./schemata/project_meta_data.md) for the project to create. 
 
@@ -89,21 +89,21 @@ Response: List containing single element {project_url, {project_meta_data}}. JSO
 **Example:**
 
 ```
-POST https://example.com/eee/bim-api/0.4/projects
+POST https://example.com/7fp/bim-api/0.4/projects
 Request:
 {
 	"project_name": "oslo-office",
-	"description": "eeEmbedded BIM-API project example - Oslo",
+	"description": "7FP BIM-API project example - Oslo",
 }
 
 Response:
 [{
-    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
 	"project_name": "oslo-office",
-	"description": "eeEmbedded BIM-API project example - Oslo",
+	"description": "7FP BIM-API project example - Oslo",
     }
 }]
 ```
@@ -113,7 +113,7 @@ Response:
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Identifies which project to update 
 JSON body	|[project_meta_data](./schemata/project_meta_data.md) for the project to update
@@ -125,21 +125,21 @@ Response: List containing single element {project_url, {project_meta_data}} for 
 **Example:**
 
 ```
-PUT https://example.com/eee/bim-api/0.4/projects/DABB
+PUT https://example.com/7fp/bim-api/0.4/projects/DABB
 Request:
 {
 	"project_name": "stuttgart-office",
-	"description": "eeEmbedded BIM-API project example moved to Stuttgart",
+	"description": "7FP BIM-API project example moved to Stuttgart",
 }
 
 Response:
 [{
-    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
 	"project_name": "stuttgart-office",
-	"description": "eeEmbedded BIM-API project example moved to Stuttgart",
+	"description": "7FP BIM-API project example moved to Stuttgart",
     }
 }]
 ```
@@ -149,7 +149,7 @@ Response:
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Identifies which project to delete 
 
@@ -162,17 +162,17 @@ Response: List containing single element {project_url, {project_meta_data}} for 
 **Example:**
 
 ```
-DELETE https://example.com/eee/bim-api/0.4/projects/DABB
+DELETE https://example.com/7fp/bim-api/0.4/projects/DABB
 Request: none
 
 Response:
 [{
-    "project_url ": "http://example.com/eee/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
 	"project_name": "stuttgart-office",
-	"description": "eeEmbedded BIM-API project example moved to Stuttgart",
+	"description": "7FP BIM-API project example moved to Stuttgart",
     }
 }]
 ```

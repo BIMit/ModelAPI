@@ -1,4 +1,4 @@
-## Upload Model Service - eeE BIMAPI
+## Upload Model Service - 7FP BIM-API
 
 * [Model Services Overview](./model_service.md)
 
@@ -31,7 +31,7 @@ When model data is a link (URL reference), both operations are simply implemente
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *model_id* | Model to upload new version for, must exist
 multipart body	|file data 
@@ -61,7 +61,7 @@ might also work, but the exact behaviour is not defined.
 **Example: **
 
 ```
-POST https://example.com/eee/bim-api/0.4/models/8A4B23AA4BFA6610007EBB?description="Alternative 1 for the HVAC solution of Use Case 1"
+POST https://example.com/7fp/bim-api/0.4/models/8A4B23AA4BFA6610007EBB?description="Alternative 1 for the HVAC solution of Use Case 1"
 
 ** Model data in body of multi-part request **
 
@@ -95,7 +95,7 @@ Request: JSON body according to [Upload model schema](./a_schemata/model_upload_
 
 -|element | explanation
 -|--------|-----------|
--|*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+-|*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 -|*version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 -| *model_is_external*	|must be supplied and set to "*true*". If you do not, weird things may happen!
 -|*model_id* | Model to upload new version for, must exist
@@ -121,7 +121,7 @@ might also work, but the exact behaviour is not defined.
 **Example: **
 
 ```
-POST https://example.com/eee/bim-api/0.4/models
+POST https://example.com/7fp/bim-api/0.4/models
 
 Request:
 {
@@ -164,7 +164,7 @@ Request: JSON body according to [Upload model schema](./a_schemata/model_upload_
 
 e/o |element | explanation
 --|--------|-----------|
--| *path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+-| *path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 -| *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 -| *model_is_external*	|must be supplied and set to "*true*". If you do not, weird things may happen!
 either | *project_id*	|Project to create model in, must exist
@@ -189,7 +189,7 @@ Returns list containing single element {model_url, {[model meta data](./a_schema
 **Example: **
 
 ```
-POST https://example.com/eee/bim-api/0.4/models
+POST https://example.com/7fp/bim-api/0.4/models
 
 Request:
 {
@@ -246,7 +246,7 @@ Assuming **model name locking** is applied, here is the URL parameters:
 
 e/o |element | explanation
 --|--------|-----------|
--| *path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+-| *path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 -| *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 either | *project_id*	|Project to create model in, must exist
 or | *project_name*	|Project to create model in, must exist
@@ -273,7 +273,7 @@ or  |*model_content*		|Attachment in multipart request: Input model data as "fil
 **Example: **
 
 ```
-POST https://example.com/eee/bim-api/0.4/models?project_id="munchen-parkhaus"
+POST https://example.com/7fp/bim-api/0.4/models?project_id="munchen-parkhaus"
 	&domain_name="HVAC"
 	&model_name="HVAC_alt_1"
 	&model_type="IFC4"

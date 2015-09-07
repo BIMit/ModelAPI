@@ -1,4 +1,4 @@
-## eeE Repository Services Schemata : Domain Meta Data ##
+## 7FP Repository Services Schemata : Domain Meta Data ##
 
 * [Level Up](../README.md)
 * [Overview](./README.md)
@@ -26,8 +26,8 @@ The attributes are mandatory or optional depending on the service used.
 ```
 {
 "$schema": "http://json-schema.org/draft-04/schema#" 
-	"title": "eee_multimodel_meta_data",
-	"description": "Schema for project meta data, eeE REST API.",
+	"title": "7fp_multimodel_meta_data",
+	"description": "Schema for project meta data, 7FP REST API.",
 	"type": "object",
 			"properties": {
 				"project_id": {"type": ["string","null"]},

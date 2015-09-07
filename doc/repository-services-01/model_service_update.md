@@ -1,4 +1,4 @@
-## Update Model - eeE BIM-API Model Services
+## Update Model - 7FP BIM-API Model Services
 
 * [Model Services Overview](./model_service.md)
 
@@ -13,7 +13,7 @@ Version: 0.4 2015.08.25 AET
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Identifies which project to look for model in 
 *domain_id*	|Identifies which assiged domain to check for model 
@@ -49,7 +49,7 @@ Other fields cannot be updated. Some error conditions:
 
 
 ```
-PUT https://example.com/eee/bim-api/0.4/models/ABCD2233
+PUT https://example.com/7fp/bim-api/0.4/models/ABCD2233
 Request:
 {
 	"description": "Alternative 2 data HVAC solution of Use Case 1 (new excel fmt)",
@@ -58,7 +58,7 @@ Request:
 
 Response:
 [{
-    "model_url" : "https://example.com/eee/bim-api/0.4/models/ABCD2233",
+    "model_url" : "https://example.com/7fp/bim-api/0.4/models/ABCD2233",
     "model_meta_data ":
     {
 	"project_id": "DABB",

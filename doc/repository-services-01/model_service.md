@@ -1,4 +1,4 @@
-## eeE BIM-API Model Services ##
+## Seventh Framework Programme BIM-API Model Services ##
 
 [Level Up](../README.md)
 [Overview](./README.md)

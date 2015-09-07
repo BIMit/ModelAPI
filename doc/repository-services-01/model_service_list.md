@@ -1,4 +1,4 @@
-## List Models -- eeE BIM-API Model Services
+## List Models -- 7FP BIM-API Model Services
 
 **Retrieve a collection of model descriptions where the currently logged on user has read access.**
 
@@ -15,7 +15,7 @@ Version: 0.4 2015.08.25 AET
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of eeEmbedded Repository Services|
+*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Identifies which project to look for model in
 *domain_id*	|Identifies which assiged domain to check for model 
