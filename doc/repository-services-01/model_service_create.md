@@ -4,7 +4,7 @@
 
 * [Model Services Overview](./model_service.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.4 2015.09.18 AET
 
 To forms of resource URLs can be utilized:
 
@@ -108,6 +108,7 @@ Returns list containing single element {model_url, {[model meta data](./a_schema
 POST https://example.com/7fp/bim-api/0.4/projects/ABCD/domains/fdfd/models
 Request:
 {
+	"model_name": "HVAC_alt_1",
 	"model_type": "IFC4",
 	"description": "Alternative 1 for the HVAC solution of Use Case 1",
 }
