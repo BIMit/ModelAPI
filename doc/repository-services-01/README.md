@@ -19,7 +19,6 @@ Schemata defining data structures can be found here: [Repository Services Schema
 * [Project Services](./project_service.md)
 * [Domain Services](./domain_service.md)
 * [Model Services](./model_service.md)
-* [File Services](./file_service.md)
 
 
 **IMPORTANT :**
