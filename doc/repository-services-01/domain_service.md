@@ -1,4 +1,4 @@
-# 7FP BIM-API Domain Services #
+# EeB BIM-API Domain Services #
 
 * [Level Up](../README.md)
 * [Overview](./README.md)
@@ -18,7 +18,7 @@ Version: 0.4 2015.08.25 AET
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
+*path-to-service*	|URL pointing to an instance of EeB Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.|
 *project_id*	|Project to list domains for. If skipped, all domains in server will be listed.
 
@@ -27,12 +27,12 @@ Returns list of {domain_url, {domain_meta_data}}. JSON Schema not shown (trivial
 **Example (project level):**
 
 ```
-GET https://example.com/7fp/bim-api/0.4/projects/ABCD/domains
+GET https://example.com/eeb/bim-api/0.4/projects/ABCD/domains
 
 
 Response:
 [{
-    "domain_url ": "http://example.com/7fp/bim-api/0.4/projects/ABCD/domains/EFFE",
+    "domain_url ": "http://example.com/eeb/bim-api/0.4/projects/ABCD/domains/EFFE",
     "domain_meta_data ":
     {
 	"project_id": "ABCD",
@@ -43,7 +43,7 @@ Response:
     }
 },
 {
-    "domain_url ": "http://example.com/7fp/bim-api/0.4/projects/ABCD/domains/EFFE",
+    "domain_url ": "http://example.com/eeb/bim-api/0.4/projects/ABCD/domains/EFFE",
     "domain_meta_data ":
     {
 	"project_id": "ABCD",
@@ -61,7 +61,7 @@ Response:
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
+*path-to-service*	|URL pointing to an instance of EeB Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Project to look for domain in. If skipped, entire server is searched for matching domain
 
@@ -70,7 +70,7 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-GET https://example.com/7fp/bim-api/0.4/projects/ABCD/domains/fbfb
+GET https://example.com/eeb/bim-api/0.4/projects/ABCD/domains/fbfb
 
 Response:
 []
@@ -84,7 +84,7 @@ Here server indicates that domain with id ***fbfb*** (HVAC above) is not used in
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
+*path-to-service*	|URL pointing to an instance of EeB Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Project to create domain in. 
 JSON body	|[domain_meta_data](./schemata/domain_meta_data.md) for the domain to create. 
@@ -94,23 +94,23 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-POST https://example.com/7fp/bim-api/0.4/projects/DABB/domains
+POST https://example.com/eeb/bim-api/0.4/projects/DABB/domains
 Request:
 {
 	"domain_name": "BCS",
-	"description": "Control system domain for 7FP Oslo-office project",
+	"description": "Control system domain for EeB Oslo-office project",
 }
 
 Response:
 [{
-    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
 	"project_name": "oslo-office",
 	"domain_id": "fcfc",
 	"domain_name": "BCS",
-	"description": "Control system domain for 7FP Oslo-office project",
+	"description": "Control system domain for EeB Oslo-office project",
     }
 }]
 ```
@@ -120,7 +120,7 @@ Response:
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
+*path-to-service*	|URL pointing to an instance of EeB Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Project to search domain in. 
 *domain_id*	|Id for the domain to update 
@@ -134,7 +134,7 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-POST https://example.com/7fp/bim-api/0.4/projects/DABB/domains
+POST https://example.com/eeb/bim-api/0.4/projects/DABB/domains
 Request:
 {
 	"domain_name": "BACS",
@@ -143,7 +143,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -160,7 +160,7 @@ Response:
 
 element | explanation
 --------|-----------|
-*path-to-service*	|URL pointing to an instance of 7FP Repository Services|
+*path-to-service*	|URL pointing to an instance of EeB Repository Services|
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Project to search domain in. 
 *domain_id*	|Id for the domain to delete 
@@ -174,11 +174,11 @@ Response: list containing single element {domain_url, {domain_meta_data}}. JSON 
 **Example:**
 
 ```
-DELETE https://example.com/7fp/bim-api/0.4/projects/DABB/domains/fcfc
+DELETE https://example.com/eeb/bim-api/0.4/projects/DABB/domains/fcfc
 
 Response:
 [{
-    "project_url ": "http://example.com/7fp/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",

@@ -1,4 +1,4 @@
-## Seventh Framework Programme BIM-API Model Services ##
+## Energy-efficient Buildings BIM-API Model Services ##
 
 [Level Up](../README.md)
 [Overview](./README.md)
