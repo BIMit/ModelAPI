@@ -2,7 +2,7 @@
 
 * [Model Services Overview](./model_service.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 **Resource URLs** 
 
@@ -33,7 +33,7 @@ JSON Schema not available (trivial)
 This example uses default repository by not supplying one
 
 ```
-GET https://example.com/eeb/bim-api/0.4/models/ABCD2233
+GET https://example.com/eeb/bim-api/0.5/models/ABCD2233
 
 Response: Model data as “file”
 ```

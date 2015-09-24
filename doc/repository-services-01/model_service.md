@@ -3,7 +3,7 @@
 [Level Up](../README.md)
 [Overview](./README.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 ### IMPORTANT
 
@@ -17,8 +17,9 @@ Models:
 
 * [Create Model Service](model_service_create.md) - create an empty model
 * [Delete Model Service](model_service_delete.md) 
-* [Download Model Service](model_service_download.md)
-* [List Models Service](model_service_list.md)
+* [Download Model Service](model_service_download.md)  - get content for single model 
+* [Download Model Metadata Service](model_service_download_metadata.md) - get metadata for single model
+* [List Models Service](model_service_list.md) - list metadata for models
 * [Update Model Service](model_service_update.md)
 * [Upload Model Service](model_service_upload.md) - create a new (non-empty) model or new model version
 

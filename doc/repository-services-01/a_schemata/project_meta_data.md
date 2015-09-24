@@ -1,9 +1,10 @@
-## EeB Repository Services Schemata : Domain Meta Data ##
+## EeB BIM-API Repository Services : Project Meta Data ##
 
 * [Level Up](../README.md)
 * [Overview](./README.md)
+* [Project Services](../project_service.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 
 ## Project Meta Data

@@ -1,9 +1,9 @@
-# Energy-efficient Buildings BIM-API Project Services #
+# EeB BIM-API Project Services #
 
 * [Level Up](../README.md)
 * [Overview](./README.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 ## List Projects
 
@@ -19,13 +19,13 @@ Returns list of {project_url, {project_meta_data}}. JSON Schema not shown (trivi
 **Example:**
 
 ```
-GET https://example.com/eeb/bim-api/0.4/projects
+GET https://example.com/eeb/bim-api/0.5/projects
 
 Request: none
 
 Response:
 [{
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/ABCD",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "ABCD",
@@ -34,7 +34,7 @@ Response:
     }
 },
 {
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/ABCD",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "DEFG",
@@ -61,11 +61,11 @@ If project not found, return is empty list *[ ]*.
 **Example:**
 
 ```
-GET https://example.com/eeb/bim-api/0.4/projects/ABCD
+GET https://example.com/eeb/bim-api/0.5/projects/ABCD
 
 Response:
 [{
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/ABCD",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/ABCD",
     "project_meta_data ":
     {
 	"project_id": "ABCD",
@@ -89,7 +89,7 @@ Response: List containing single element {project_url, {project_meta_data}}. JSO
 **Example:**
 
 ```
-POST https://example.com/eeb/bim-api/0.4/projects
+POST https://example.com/eeb/bim-api/0.5/projects
 Request:
 {
 	"project_name": "oslo-office",
@@ -98,7 +98,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -125,7 +125,7 @@ Response: List containing single element {project_url, {project_meta_data}} for 
 **Example:**
 
 ```
-PUT https://example.com/eeb/bim-api/0.4/projects/DABB
+PUT https://example.com/eeb/bim-api/0.5/projects/DABB
 Request:
 {
 	"project_name": "stuttgart-office",
@@ -134,7 +134,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -162,12 +162,12 @@ Response: List containing single element {project_url, {project_meta_data}} for 
 **Example:**
 
 ```
-DELETE https://example.com/eeb/bim-api/0.4/projects/DABB
+DELETE https://example.com/eeb/bim-api/0.5/projects/DABB
 Request: none
 
 Response:
 [{
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",

@@ -2,7 +2,7 @@
 
 * [Model Services Overview](./model_service.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 There are four distinct functions for upload model:
 
@@ -61,13 +61,13 @@ might also work, but the exact behaviour is not defined.
 **Example: **
 
 ```
-POST https://example.com/eeb/bim-api/0.4/models/8A4B23AA4BFA6610007EBB?description="Alternative 1 for the HVAC solution of Use Case 1"
+POST https://example.com/eeb/bim-api/0.5/models/8A4B23AA4BFA6610007EBB?description="Alternative 1 for the HVAC solution of Use Case 1"
 
 ** Model data in body of multi-part request **
 
 Response:
 [{
-    "model_url ": "http://example.com/path-to-service/0.3/models/CFCA23AA59BEEE444FFFFF",
+    "model_url ": "http://example.com/path-to-service/0.5/models/CFCA23AA59BEEE444FFFFF",
     "model_meta_data ":
     {
 	"model_id": "CFCA23AA59BEEE444FFFFF",
@@ -121,7 +121,7 @@ might also work, but the exact behaviour is not defined.
 **Example: **
 
 ```
-POST https://example.com/eeb/bim-api/0.4/models
+POST https://example.com/eeb/bim-api/0.5/models
 
 Request:
 {
@@ -136,7 +136,7 @@ Request:
 
 Response:
 [{
-    "model_url ": "http://example.com/path-to-service/0.3/models/8A4B23AA4BFA6610007EBB",
+    "model_url ": "http://example.com/path-to-service/0.5/models/8A4B23AA4BFA6610007EBB",
     "model_meta_data ":
     {
 	"model_id": "8A4B23AA4BFA6610007EBB",
@@ -164,18 +164,11 @@ Request: JSON body according to [Upload model schema](./a_schemata/model_upload_
 
 e/o |element | explanation
 --|--------|-----------|
--| *path-to-service*	|URL pointing to an instance of EeB Repository Services|
--| *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
--| *model_is_external*	|must be supplied and set to "*true*". If you do not, weird things may happen!
-either | *project_id*	|Project to create model in, must exist
-or | *project_name*	|Project to create model in, must exist
-either | *domain_name*	|Domain to assign model to. If ***domain auto create*** is enabled, the domain is created on the fly if it does not exist 
-or |*domain_id*	|Domain to assign model to, must exist. 
- - | *model_name* | Name of model 
- - | *model_type* | "IFC2x3", "IFC4", "...." 
-(opt)| *schema_url* | Informative only at time of writing
-(opt)| *desciption* | Informative only
-- |*model_content*		|URL to model data (model_is_external=true)
+-| *path-to-service*	| URL pointing to an instance of EeB Repository Services|
+-| *version*		| States version of the API to use, allowing multiple versions of API for upgrading.
+-| *model_is_external*	| must be supplied and set to "*true*". If you do not, weird things may happen!
+-| *model_meta_data*	| See [Upload model schema](./a_schemata/model_upload_schema.md)
+-|*model_content*	| URL to model data (model_is_external=true)
 
 
 Returns list containing single element {model_url, {[model meta data](./a_schemata/model_meta_data.md)}}. JSON Schema not shown (trivial).
@@ -184,12 +177,12 @@ Returns list containing single element {model_url, {[model meta data](./a_schema
 
 * If a model already exist inside a project with same name and domain, a new version is created,if not a new model is created.
 * It is also possible to "identify" an existing model with the "path" using project_id and domain_id as indicated above. Same rule applies: if model name and domain name indicates an existing model, a new version is created. 
-* Put another way -if you send exactly the same request multiple times, the first one will create a new model, the subsequent ones will create new versions.
+* Put another way - if you send exactly the same request multiple times, the first one will create a new model, the subsequent ones will create new versions.
 
 **Example: **
 
 ```
-POST https://example.com/eeb/bim-api/0.4/models
+POST https://example.com/eeb/bim-api/0.5/models
 
 Request:
 {
@@ -207,7 +200,7 @@ Request:
 
 Response:
 [{
-    "model_url ": "http://example.com/path-to-service/0.3/models/CFCA23AA59BEEE444FFFFF",
+    "model_url ": "http://example.com/path-to-service/0.5/models/CFCA23AA59BEEE444FFFFF",
     "model_meta_data ":
     {
 	"model_id": "CFCA23AA59BEEE444FFFFF",
@@ -239,32 +232,35 @@ It is possible to (partly) use URL itself, the two URLs below are equivalent:
 * POST {path-to-service}/{version}/projects/*project_id*/domains/*domain_id*/models
 * POST {path-to-service}/{version}/models?project_id="*project_id*&domain_id="*domain_id*"
 
+Hence, we end up with alternatives:
 
-**Resource URL**: POST {path-to-service}/{version}/models?*fieldname*=value&*fieldname*=value&,*fieldname*=value&...
+**A1: Multipart request**
 
-Assuming **model name locking** is applied, here is the URL parameters:
+* **Resource URL**: POST {path-to-service}/{version}/models?
+* Part 1: JSON body according to [Upload model schema](./a_schemata/model_upload_schema.md)
+* Part 2: model content
 
-e/o |element | explanation
+**A2: No multipart request, parameters in URL**
+
+* **Resource URL**: POST {path-to-service}/{version}/models?*fieldname*=value&*fieldname*=value&,*fieldname*=value&...
+* URL Parameters according to [Upload model schema](./a_schemata/model_upload_schema.md) in URL
+* model content as request body
+
+Parameters are the same:
+
+element | | explanation
 --|--------|-----------|
--| *path-to-service*	|URL pointing to an instance of EeB Repository Services|
--| *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
-either | *project_id*	|Project to create model in, must exist
-or | *project_name*	|Project to create model in, must exist
-either | *domain_name*	|Domain to assign model to. If ***domain auto create*** is enabled, the domain is created on the fly if it does not exist 
-or |*domain_id*	|Domain to assign model to, must exist. 
--  | *model_name* | Name of model 
- - | *model_type* | "IFC2x3", "IFC4", "...." 
-(opt)| *file_type* | ".ifc", ".xml", Necessary if model_type has more than one possible file type (NEW) 
-(opt)| *schema_url* | Informative only at time of writing
-(opt)| *desciption* | Informative only
--| - |
-- | *model_is_external*	|boolean, indicating if the model data is supplied as URL or attachment
-either|*model_content*		|URL to model data (model_is_external=true)
-or  |*model_content*		|Attachment in multipart request: Input model data as "file"(model_is_external=false)
-
+*path-to-service*| | URL pointing to an instance of EeB Repository Services|
+*version*	| | States version of the API to use, allowing multiple versions of API for upgrading.
+*model_is_external*| | boolean, indicating if the model data is supplied as URL or attachment
+*model_meta_data*| | See [Upload model schema](./a_schemata/model_upload_schema.md). In the case of parameters in the URL,the fieldnames are given directly WITHOUT any mentioning of *model_meta_data* 
+*model_content*	|either | URL to model data (model_is_external=true)
+            	|or | Attachment in multipart request: Input model data as "file"(model_is_external=false)
 
 
 **NOTE :**
+
+* Some model types have more than one possible filetype. For example, an IFC model can be represented in SPF (.ifc) or XML (ifcxml). In this case there are some options; we can look into the file, we can use **schema_url** or introduce extra parameters. At time of writing this is not decided.
 
 * If a model already exist inside a project with same name and domain, a new version is created,if not a new model is created.
 * It is also possible to "identify" an existing model with the "path" using project_id and domain_id as indicated above. Same rule applies: if model name and domain name indicates an existing model, a new version is created. 
@@ -273,7 +269,7 @@ or  |*model_content*		|Attachment in multipart request: Input model data as "fil
 **Example: **
 
 ```
-POST https://example.com/eeb/bim-api/0.4/models?project_id="munchen-parkhaus"
+POST https://example.com/eeb/bim-api/0.5/models?project_id="munchen-parkhaus"
 	&domain_name="HVAC"
 	&model_name="HVAC_alt_1"
 	&model_type="IFC4"
@@ -283,7 +279,7 @@ POST https://example.com/eeb/bim-api/0.4/models?project_id="munchen-parkhaus"
 
 Response:
 [{
-    "model_url ": "http://example.com/path-to-service/0.3/models/CFCA23AA59BEEE444FFFFF",
+    "model_url ": "http://example.com/path-to-service/0.5/models/CFCA23AA59BEEE444FFFFF",
     "model_meta_data ":
     {
 	"model_id": "CFCA23AA59BEEE444FFFFF",

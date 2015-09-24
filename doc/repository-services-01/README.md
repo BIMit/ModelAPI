@@ -2,7 +2,7 @@
 
 [Level Up](../README.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 ### Classes 
 
@@ -64,7 +64,7 @@ URL | Result |
 *GET ../projects/ABCD/domains* | retrieve list of all domains in project *ABCD*
 *GET ../models*| retrieve list of all models on server
 *GET ../projects/ABCD/models* | retrieve list of all models in project *ABCD*
-*GET ../model/EFFE* | retrieve model *EFFE* 
+*GET ../models/EFFE* | retrieve model *EFFE* 
 
 Note that the last two URLS identify the same model, since any model has its own globally unique identifer, "*EFFE*" in this case. Since "parent" is (often) implicitly given by identifying the cild, it is in many cases not really necessary to include parents in the path. But it might be wise to  do anyway:
 
@@ -72,19 +72,31 @@ Note that the last two URLS identify the same model, since any model has its own
 * To compensate for possible "data duplication" errors, such problems are far from unknown
 
 
+### Retrieving metadata for an item
+
+Retrieving a single model with URL like **GET .../models/ABCD** will yield the content of the model, not the meta-data like name, version and so on. As a convenience you can retrieve metadata by the special **.../metadata** resource, as an alternative to filtering the return of LIST MODELS operations. Example:
+
+URL | Result |
+--|--|
+*GET ../models*| retrieve list of all models on server
+*GET ../models/EFFE* | retrieve model *EFFE* 
+*GET ../models/EFFE/metadata* | retrieve metadata for model *EFFE* 
+
+For example with data see DOWNLOAD MODEL operation.
+
 ### Arguments/data in JSON Body versus in URL
 
 In many cases you can find the same elements in the URL as in returned JSON objects. Example: listing domains for project abcd:
 
 ```
-A1: GET https://example.com/eeb/bim-api/0.4/projects/abcd/domains
-A2: GET https://example.com/eeb/bim-api/0.4/domains  {"project_id":"abcd"}
+A1: GET https://example.com/eeb/bim-api/0.5/projects/abcd/domains
+A2: GET https://example.com/eeb/bim-api/0.5/domains  {"project_id":"abcd"}
 ```
 
 These two alternatives means the same. Now, what happens if you use both, especially with a conflict:
 
 ```
-A3: GET https://example.com/eeb/bim-api/0.4/projects/abcd/domains {"project_id":"1234"}
+A3: GET https://example.com/eeb/bim-api/0.5/projects/abcd/domains {"project_id":"1234"}
 ```
 In this case, arguments given as part of URL will take precedence.
 

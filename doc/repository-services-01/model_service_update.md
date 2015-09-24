@@ -2,8 +2,9 @@
 
 * [Model Services Overview](./model_service.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
+**NOTE**: Strictly speaking, we are updating the model metadata, not the model itself.
 
 **Resource URLs** 
 
@@ -17,7 +18,7 @@ element | explanation
 *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 *project_id*	|Identifies which project to look for model in 
 *domain_id*	|Identifies which assiged domain to check for model 
-*model_id**	| Identifies which model to delete
+*model_id*	| Identifies which model to update
 
 
 ** NOTE: **
@@ -35,6 +36,7 @@ field|comment
 *description* | Freely updateable
 *domain_id* | The model will be reassigned to an **existing** domain in same project. 
 *domain_name* | If  domain autocreate is enabled, the model will be assigned to a **new** domain in same project. If domain name exists, the model will be reassigned to found domain in stead.
+*model_mime_type* | Enforce a MIME type for this model, or set to emty string to cancel enforcement
 *model_name* | If **name locking** is used, the name cannot be changed. If not, it is freely updateable
 *model_type* | If model is stored as **file/blob** this field is freely updateable. If the model is stored according to an implemented database schema like IFC or similar, the type cannot be changed
 *schema_url*| Freely updateable
@@ -49,7 +51,7 @@ Other fields cannot be updated. Some error conditions:
 
 
 ```
-PUT https://example.com/eeb/bim-api/0.4/models/ABCD2233
+PUT https://example.com/eeb/bim-api/0.5/models/ABCD2233
 Request:
 {
 	"description": "Alternative 2 data HVAC solution of Use Case 1 (new excel fmt)",
@@ -58,7 +60,7 @@ Request:
 
 Response:
 [{
-    "model_url" : "https://example.com/eeb/bim-api/0.4/models/ABCD2233",
+    "model_url" : "https://example.com/eeb/bim-api/0.5/models/ABCD2233",
     "model_meta_data ":
     {
 	"project_id": "DABB",

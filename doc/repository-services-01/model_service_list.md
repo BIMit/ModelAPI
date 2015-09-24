@@ -4,7 +4,7 @@
 
 * [Model Services Overview](./model_service.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 
 **Resource URLs** 
@@ -32,11 +32,11 @@ Response: List containing zero or more elements {model_url,{[model_meta_data](./
 This example shows two versions of one model and one version of another in project with id "ABCD"
 
 ```
-GET https://example.com/path-to-service/0.3/projects/ABCD/models
+GET https://example.com/path-to-service/0.5/projects/ABCD/models
 
 Response:
 [{
-    "model_url ": "http://example.com/path-to-service/0.3/models/CFCA23AA59BEEE444222CC",
+    "model_url ": "http://example.com/path-to-service/0.5/models/CFCA23AA59BEEE444222CC",
     "model_meta_data ":
     {
         "model_guid": "CFCA23AA59BEEE444222CC",
@@ -46,13 +46,13 @@ Response:
 	"domain_name": "HVAC",
 	"model_type": "IFC4",
 	"model_name": "HVAC_alt_1",
-	"model_type": "IFC4",
+	"schema_url": "http://www.buildingsmart-tech.org/ifc/IFC4/Add1/IFC4_ADD1.exp",
 	"model_version": "V1",
 	"description": "Alternative 1 for the HVAC solution of Use Case 1",
     }
 },
 {
-    "model_url ": "http://example.com/path-to-service/0.3/models/CFCA23AA59BEEE444FFFFF",
+    "model_url ": "http://example.com/path-to-service/0.5/models/CFCA23AA59BEEE444FFFFF",
     "model_meta_data ":
     {
         "model_guid": "CFCA23AA59BEEE444FFFFF",
@@ -62,13 +62,13 @@ Response:
 	"domain_name": "HVAC",
 	"model_type": "IFC4",
 	"model_name": "HVAC_alt_1",
-	"model_type": "IFC4",
+	"schema_url": "http://www.buildingsmart-tech.org/ifc/IFC4/Add1/IFC4_ADD1.exp",
 	"model_version": "V1",
 	"description": "Alternative 1 for the HVAC solution of Use Case 1",
     }
 },
 {
-    "model_url ": "http://example.com/path-to-service/0.3/models/ADFE23AA11BCFF444122BB",
+    "model_url ": "http://example.com/path-to-service/0.5/models/ADFE23AA11BCFF444122BB",
     "model_meta_data ":
     {
 	"project_id": "ABCD",
@@ -77,7 +77,7 @@ Response:
 	"domain_name": "HVAC",
 	"model_type": "IFC4",
 	"model_name": "HVAC_alt_2",
-	"model_type": "IFC4",
+	"schema_url": "http://www.buildingsmart-tech.org/ifc/IFC4/Add1/IFC4_ADD1.exp",
 	"model_version": "V1",
 	"description": "Alternative 2 for the HVAC solution of Use Case 1",
     }

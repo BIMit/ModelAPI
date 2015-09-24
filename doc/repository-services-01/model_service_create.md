@@ -4,7 +4,7 @@
 
 * [Model Services Overview](./model_service.md)
 
-Version: 0.4 2015.09.18 AET
+Version: 0.5 2015.09.25 AET
 
 To forms of resource URLs can be utilized:
 
@@ -36,8 +36,10 @@ either | *domain_name*	|Domain to assign model to. If ***domain auto create*** i
 or |*domain_id*	|Domain to assign model to, must exist. 
  - | *model_name* | Name of model 
  - | *model_type* | "IFC2x3", "IFC4", "...." 
- - | *schema_url* | Informative only at time of writing
- - | *desciption* | Informative only
+(opt)| *schema_url* | Informative only at time of writing
+(opt)| *model_treat_as_binary* | Boolean - if present and true, the model content should NOT be parsed into database objects
+(opt)| *model_mime_type* | Enforce MIME type for this model - usually not used
+(opt)| *description* | Human readable description of this model
 
 Returns list containing single element {model_url, {[model meta data](./a_schemata/model_meta_data.md)}}. JSON Schema not shown (trivial).
 
@@ -51,19 +53,20 @@ Returns list containing single element {model_url, {[model meta data](./a_schema
 Domain "LCC" and model "Cost model" assumed non existing => auto-created
 
 ```
-POST https://example.com/eeb/bim-api/0.4/models
+POST https://example.com/eeb/bim-api/0.5/models
 Request:
 {
 	"project_name": "munchen-parkhaus",
 	"domain_name": "LCC",
 	"model_name": "Cost model",
 	"model_type": "XLSX",
+	"model_treat_as_binary": "true",
 	"description": "Cost model Alternative 1 for the HVAC",
 }
 
 Response:
 [{
-    "model_url ": "http://example.com/eeb/bim-api/0.4/models/CFCA23AA59BEEE444FEEEE",
+    "model_url ": "http://example.com/eeb/bim-api/0.5/models/CFCA23AA59BEEE444FEEEE",
     "model_meta_data ":
     {
 	"model_guid": "CFCA23AA59BEEE444FEEEE",
@@ -72,6 +75,7 @@ Response:
 	"domain_id": "cdab",
 	"domain_name": "LCC",
 	"model_name": "Cost model",
+	"model_treat_as_binary": "true",
 	"model_type": "XLSX",
 	"model_version": "V1",
 	"description": "Cost model Alternative 1 for the HVAC",
@@ -105,7 +109,7 @@ Returns list containing single element {model_url, {[model meta data](./a_schema
 **Example:**
 
 ```
-POST https://example.com/eeb/bim-api/0.4/projects/ABCD/domains/fdfd/models
+POST https://example.com/eeb/bim-api/0.5/projects/ABCD/domains/fdfd/models
 Request:
 {
 	"model_name": "HVAC_alt_1",
@@ -115,7 +119,7 @@ Request:
 
 Response:
 [{
-    "model_url ": "http://example.com/eeb/bim-api/0.4/models/CFCA23AA59BEEE444FFFFF",
+    "model_url ": "http://example.com/eeb/bim-api/0.5/models/CFCA23AA59BEEE444FFFFF",
     "model_meta_data ":
     {
 	"model_guid": "CFCA23AA59BEEE444FFFFF",

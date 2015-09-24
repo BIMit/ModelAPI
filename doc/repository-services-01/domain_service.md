@@ -3,7 +3,7 @@
 * [Level Up](../README.md)
 * [Overview](./README.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 **Important :**
 
@@ -27,12 +27,12 @@ Returns list of {domain_url, {domain_meta_data}}. JSON Schema not shown (trivial
 **Example (project level):**
 
 ```
-GET https://example.com/eeb/bim-api/0.4/projects/ABCD/domains
+GET https://example.com/eeb/bim-api/0.5/projects/ABCD/domains
 
 
 Response:
 [{
-    "domain_url ": "http://example.com/eeb/bim-api/0.4/projects/ABCD/domains/EFFE",
+    "domain_url ": "http://example.com/eeb/bim-api/0.5/projects/ABCD/domains/EFFE",
     "domain_meta_data ":
     {
 	"project_id": "ABCD",
@@ -43,7 +43,7 @@ Response:
     }
 },
 {
-    "domain_url ": "http://example.com/eeb/bim-api/0.4/projects/ABCD/domains/EFFE",
+    "domain_url ": "http://example.com/eeb/bim-api/0.5/projects/ABCD/domains/EFFE",
     "domain_meta_data ":
     {
 	"project_id": "ABCD",
@@ -70,7 +70,7 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-GET https://example.com/eeb/bim-api/0.4/projects/ABCD/domains/fbfb
+GET https://example.com/eeb/bim-api/0.5/projects/ABCD/domains/fbfb
 
 Response:
 []
@@ -94,7 +94,7 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-POST https://example.com/eeb/bim-api/0.4/projects/DABB/domains
+POST https://example.com/eeb/bim-api/0.5/projects/DABB/domains
 Request:
 {
 	"domain_name": "BCS",
@@ -103,7 +103,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -134,7 +134,7 @@ Returns list containing single element {domain_url, {domain_meta_data}}. JSON Sc
 **Example:**
 
 ```
-POST https://example.com/eeb/bim-api/0.4/projects/DABB/domains
+POST https://example.com/eeb/bim-api/0.5/projects/DABB/domains
 Request:
 {
 	"domain_name": "BACS",
@@ -143,7 +143,7 @@ Request:
 
 Response:
 [{
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",
@@ -174,11 +174,11 @@ Response: list containing single element {domain_url, {domain_meta_data}}. JSON 
 **Example:**
 
 ```
-DELETE https://example.com/eeb/bim-api/0.4/projects/DABB/domains/fcfc
+DELETE https://example.com/eeb/bim-api/0.5/projects/DABB/domains/fcfc
 
 Response:
 [{
-    "project_url ": "http://example.com/eeb/bim-api/0.4/projects/DABB",
+    "project_url ": "http://example.com/eeb/bim-api/0.5/projects/DABB",
     "project_meta_data ":
     {
 	"project_id": "DABB",

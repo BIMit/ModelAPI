@@ -2,7 +2,7 @@
 
 * [Model Services Overview](./model_service.md)
 
-Version: 0.4 2015.08.25 AET
+Version: 0.5 2015.09.25 AET
 
 **Resource URLs** 
 
@@ -29,11 +29,11 @@ Response: List containing single element {model_url,{[model_meta_data](./a_schem
 
 
 ```
-DELETE https://example.com/eeb/bim-api/0.4/models/ABCD2233
+DELETE https://example.com/eeb/bim-api/0.5/models/ABCD2233
 
 Response:
 [{
-    "model_url" : "https://example.com/eeb/bim-api/0.4/models/ABCD2233",
+    "model_url" : "https://example.com/eeb/bim-api/0.5/models/ABCD2233",
     "model_meta_data ":
     {
 	"project_id": "DABB",
