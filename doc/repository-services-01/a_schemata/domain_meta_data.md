@@ -1,4 +1,4 @@
-## 7FP Repository Services Schemata : Domain Meta Data ##
+## EeB Repository Services Schemata : Domain Meta Data ##
 
 * [Level Up](../README.md)
 * [Overview](./README.md)
@@ -27,8 +27,8 @@ The attributes are mandatory or optional depending on the service used.
 ```
 {
 "$schema": "http://json-schema.org/draft-04/schema#" 
-	"title": "7fp_domain_meta_data",
-	"description": "Schema for domain meta data, 7FP REST API.",
+	"title": "eeb_domain_meta_data",
+	"description": "Schema for domain meta data, EeB REST API.",
 	"type": "object",
 			"properties": {
 				"project_id": {"type": ["string","null"]},

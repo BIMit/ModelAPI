@@ -1,4 +1,4 @@
-## Seventh Framework Programme Repository Services ##
+## Energy-efficient Buildings Repository Services ##
 
 [Level Up](../README.md)
 
@@ -19,7 +19,6 @@ Schemata defining data structures can be found here: [Repository Services Schema
 * [Project Services](./project_service.md)
 * [Domain Services](./domain_service.md)
 * [Model Services](./model_service.md)
-* [File Services](./file_service.md)
 
 
 **IMPORTANT :**
@@ -45,7 +44,7 @@ By convention a RESTful interface often implement a list as:
  GET  http(s)://<server>/rest_api/<path_to_items>
 ```
 
-The general 7fp BIM-API URL pattern is
+The general EeB BIM-API URL pattern is
 ```
 GET <path-to-service>/[projects/<p-id>/][domains/d-id/][models/m-id]
 ```
@@ -78,14 +77,14 @@ Note that the last two URLS identify the same model, since any model has its own
 In many cases you can find the same elements in the URL as in returned JSON objects. Example: listing domains for project abcd:
 
 ```
-A1: GET https://example.com/7fp/bim-api/0.4/projects/abcd/domains
-A2: GET https://example.com/7fp/bim-api/0.4/domains  {"project_id":"abcd"}
+A1: GET https://example.com/eeb/bim-api/0.4/projects/abcd/domains
+A2: GET https://example.com/eeb/bim-api/0.4/domains  {"project_id":"abcd"}
 ```
 
 These two alternatives means the same. Now, what happens if you use both, especially with a conflict:
 
 ```
-A3: GET https://example.com/7fp/bim-api/0.4/projects/abcd/domains {"project_id":"1234"}
+A3: GET https://example.com/eeb/bim-api/0.4/projects/abcd/domains {"project_id":"1234"}
 ```
 In this case, arguments given as part of URL will take precedence.
 

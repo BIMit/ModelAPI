@@ -1,4 +1,4 @@
-## 7FP Upload Model Schema ##
+## EeB Upload Model Schema ##
 
 * [Level Up](../README.md)
 * [Overview](./README.md)
@@ -14,8 +14,8 @@ The schemata in this page is derived from the "ORIGINAL" meta data schema
 ```
 {
 "$schema": "http://json-schema.org/draft-03/schema#" 
-	"title": "7fp_model_POST",
-	"description": "Schema for upload template POST, 7FP REST API.",
+	"title": "eeb_model_POST",
+	"description": "Schema for upload template POST, EeB REST API.",
 	"type": "object",
 	"properties": {
 		"model_meta_data ": {

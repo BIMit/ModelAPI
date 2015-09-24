@@ -1,4 +1,4 @@
-## Create Model Service - 7FP BIM API
+## Create Model Service - EeB BIM API
 
 ** Create an empty model in server repository **
 
@@ -28,7 +28,7 @@ Request: JSON body according to [model meta data](./a_schemata/model_meta_data.m
 
 e/o |element | explanation
 --|--------|-----------|
--| *path-to-service*	|URL pointing to an instance of 7FP Repository Services|
+-| *path-to-service*	|URL pointing to an instance of EeB Repository Services|
 -| *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 either | *project_id*	|Project to create model in, must exist
 or | *project_name*	|Project to create model in, must exist and be unique on  server
@@ -51,7 +51,7 @@ Returns list containing single element {model_url, {[model meta data](./a_schema
 Domain "LCC" and model "Cost model" assumed non existing => auto-created
 
 ```
-POST https://example.com/7fp/bim-api/0.4/models
+POST https://example.com/eeb/bim-api/0.4/models
 Request:
 {
 	"project_name": "munchen-parkhaus",
@@ -63,7 +63,7 @@ Request:
 
 Response:
 [{
-    "model_url ": "http://example.com/7fp/bim-api/0.4/models/CFCA23AA59BEEE444FEEEE",
+    "model_url ": "http://example.com/eeb/bim-api/0.4/models/CFCA23AA59BEEE444FEEEE",
     "model_meta_data ":
     {
 	"model_guid": "CFCA23AA59BEEE444FEEEE",
@@ -87,7 +87,7 @@ Request: JSON body according to [model meta data](./a_schemata/model_meta_data.m
 
 e/o |element | explanation
 --|--------|-----------|
--| *path-to-service*	|URL pointing to an instance of 7FP Repository Services|
+-| *path-to-service*	|URL pointing to an instance of EeB Repository Services|
 -| *version*	|States version of the API to use, allowing multiple versions of API for upgrading.
 -| *project_id*	|Project to create model in, must exist
 -|*domain_id*	|Domain to assign model to, must exist. 
@@ -105,7 +105,7 @@ Returns list containing single element {model_url, {[model meta data](./a_schema
 **Example:**
 
 ```
-POST https://example.com/7fp/bim-api/0.4/projects/ABCD/domains/fdfd/models
+POST https://example.com/eeb/bim-api/0.4/projects/ABCD/domains/fdfd/models
 Request:
 {
 	"model_name": "HVAC_alt_1",
@@ -115,7 +115,7 @@ Request:
 
 Response:
 [{
-    "model_url ": "http://example.com/7fp/bim-api/0.4/models/CFCA23AA59BEEE444FFFFF",
+    "model_url ": "http://example.com/eeb/bim-api/0.4/models/CFCA23AA59BEEE444FFFFF",
     "model_meta_data ":
     {
 	"model_guid": "CFCA23AA59BEEE444FFFFF",
