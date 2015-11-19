@@ -2,7 +2,7 @@
 
 [Level Up](../README.md)
 
-Version: 0.5 2015.09.25 AET
+Version: 0.5 2015.11.18 AET
 
 ### Classes 
 
@@ -11,6 +11,7 @@ The following main classes are defined:
 * Project - contains and domains and models.
 * Domain - generalized concept of discipline ur usage area like "Architect" "HVAC", "LCC Data" and similar. 
 * Model - part of project that can be contained in a single file. A model is assigned to a domain. Each model can exist in several versions, usually representing evolvement over time - that is, versions are *not* representing variants of the same model
+* File - a model that is handled specifically as a binary file
 
 Schemata defining data structures can be found here: [Repository Services Schemata](a_schemata/README.md)
 
@@ -19,6 +20,7 @@ Schemata defining data structures can be found here: [Repository Services Schema
 * [Project Services](./project_service.md)
 * [Domain Services](./domain_service.md)
 * [Model Services](./model_service.md)
+* [File Services](./file_service.md)
 
 
 **IMPORTANT :**
@@ -29,6 +31,7 @@ Level 1:
 * Models: CREATE LIST UPLOAD DOWNLOAD DELETE
 * Projects: LIST
 * Domains: LIST
+* Files (treat as binary) option not used
 
 Creation of  **Projects** may/will be done by server administration tools.
 
